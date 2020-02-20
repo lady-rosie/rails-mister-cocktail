@@ -1,12 +1,15 @@
 <div class="container mt-3">
   <h1>List of cocktails</h1>
-  <ul>
-    <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-    <% end %>
-  </ul>
 
-  <p><%= link_to 'Add a cocktail', new_cocktail_path %></p>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </div>
+    <% end %>
+  </div>
+
+    <%= link_to 'Add a cocktail', new_cocktail_path, class: "btn btn-flat" %></p>
 
 </div>
 

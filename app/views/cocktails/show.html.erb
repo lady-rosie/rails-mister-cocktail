@@ -1,13 +1,25 @@
 <div class="container mt-3">
   <h1><%= @cocktail.name.capitalize%></h1>
   <h4>Recipe</h4>
+  <div class="recipe">
+    <img src="https://images.unsplash.com/photo-1546171753-97d7676e4602" alt="">
   <ul>
     <% @cocktail.doses.each do |dose|%>
-      <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+      <li><%= link_to dose_path(dose.id),
+        method: :delete,
+        data: { confirm: "Delete #{dose.ingredient.name}?" } do %>
+        <i class="fas fa-times"></i>
+        <% end %>
+        <%= dose.description %> of <%= dose.ingredient.name %>
+      </li>
     <% end %>
   </ul>
+  </div>
 
   <p><%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %></p>
-  <p><%= link_to 'Back to list', cocktails_path %></p>
+
+  <%= link_to cocktails_path, class: "btn btn-ghost"  do%>
+    <p><i class="fas fa-chevron-left"></i> Back</p>
+  <% end %>
 
 </div>
