@@ -1,12 +1,13 @@
 .recipe{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   font-weight: bold;
   background: white;
-  width: 650px;
+  width: 680px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 500px;
+  padding: 20px;
 
   img{
     width:300px;
@@ -26,5 +27,8 @@
 }
 
 .recipe-info{
-  margin: 40px
+  margin: 40px;
+  a{
+    color: $green;
+  }
 }

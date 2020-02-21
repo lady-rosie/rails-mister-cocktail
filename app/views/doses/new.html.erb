@@ -1,4 +1,11 @@
 <div class="container mt-3">
+    <%= link_to cocktail_path(@cocktail), class: "btn btn-ghost"  do%>
+    <p><i class="fas fa-chevron-left"></i> Back</p>
+  <% end %>
   <h1>Add an ingredient</h1>
+  <div class="row form col-md-6">
+    <div class="col-md-11">
   <%= render 'form' %>
+  </div>
+</div>
 </div>
