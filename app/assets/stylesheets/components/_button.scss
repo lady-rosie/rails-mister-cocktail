@@ -33,4 +33,17 @@
     padding: 0px;
   }
 }
+.btn-flat-home {
+  color: $white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $pink;
+  transition: background 0.3s ease;
+  margin: 16px 0;
 
+  &:hover {
+  background: $pink;
+  font-weight: bold;
+  color: $white;
+  }
+}

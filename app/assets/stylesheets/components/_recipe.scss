@@ -1,21 +1,19 @@
-.recipe{
+.recipe-card{
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   font-weight: bold;
   background: white;
-  width: 680px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 500px;
-  padding: 20px;
 
   img{
-    width:300px;
+    width:  40%;
+    height: 100%;
   }
 
   ul{
     list-style: none;
     color: $charcoal;
+    padding-left: 16px;
 
     .fas{
       color: $pink;
@@ -26,9 +24,20 @@
   }
 }
 
-.recipe-info{
-  margin: 40px;
+.recipe{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-grow: 1;
+  padding: 40px;
+
   a{
     color: $green;
+  }
+}
+.review-form{
+  h3{
+    font-size:20px;
+    text-align:center;
   }
 }

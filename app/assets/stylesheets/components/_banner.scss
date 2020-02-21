@@ -1,0 +1,21 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+
+  h1 {
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 50px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 20px;
+    color: $dark-green;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
+

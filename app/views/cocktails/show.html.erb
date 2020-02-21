@@ -2,27 +2,61 @@
     <%= link_to cocktails_path, class: "btn btn-ghost"  do%>
     <p><i class="fas fa-chevron-left"></i> Back</p>
   <% end %>
-  <div class="recipe">
-    <img src="https://images.unsplash.com/photo-1546171753-97d7676e4602" alt="">
 
-  <div class="recipe-info">
-  <h1><%= @cocktail.name.capitalize%></h1>
-  <h4>Recipe</h4>
-  <ul>
-    <% @cocktail.doses.each do |dose|%>
-      <li>
-        <%= dose.description %> of <%= dose.ingredient.name %>
-        <%= link_to dose_path(dose.id),
-        method: :delete,
-        data: { confirm: "Delete #{dose.ingredient.name}?" } do %>
-        <i class="fas fa-times"></i>
-        <% end %>
-      </li>
+<div class="recipe-card">
+    <%= cl_image_tag @cocktail.photo.key, crop: :fill %>
+
+  <div class="recipe">
+    <div class="recipe-info">
+    <h1><%= @cocktail.name.capitalize%></h1>
+    <h4>Recipe</h4>
+    <ul>
+        <% @cocktail.doses.each do |dose|%>
+          <li>
+          <%= dose.description %> <%= dose.ingredient.name %>
+          <%= link_to dose_path(dose.id),
+          method: :delete,
+          data: { confirm: "Delete #{dose.ingredient.name}?" } do %>
+            <i class="fas fa-times"></i>
+          <% end %>
+        </li>
     <% end %>
   </ul>
-  <p><%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %></p>
+    <p><%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %></p>
+
+    </div>
+    <div class="review-form">
+      <h3>Let us know what you think!</h3>
+      <%= simple_form_for [@cocktail, @review] do |f| %>
+      <%= f.input :rating, collection: 0..5 %>
+      <%= f.input :content %>
+      <%= f.submit value='Add comment', class: "btn btn-flat"%>
+    <% end %>
+    </div>
   </div>
-  </div>
+</div>
+<div class="list-group mt-4">
+  <% @cocktail.reviews.each do |review| %>
+    <li class="list-group-item">
+      <small>
+        <% count = 0 %>
+        <% 5.times do %>
+          <% if review.rating > count %>
+            <i class="fas fa-star"></i>
+          <% else %>
+            <i class="far fa-star"></i>
+          <% end %>
+          <% count += 1 %>
+        <% end %>
+      </small>
+      <p><%= review.content %></p>
+    </li>
+  <% end %>
+</div>
+
+
+
+
 
 
 
