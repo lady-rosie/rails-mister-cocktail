@@ -4,8 +4,9 @@
   <% end %>
 
 <div class="recipe-card">
-    <%= cl_image_tag @cocktail.photo.key, crop: :fill %>
-
+    <div class="recipe-img">
+      <%= cl_image_tag @cocktail.photo.key, crop: :fill %>
+    </div>
   <div class="recipe">
     <div class="recipe-info">
     <h1><%= @cocktail.name.capitalize%></h1>
@@ -25,38 +26,41 @@
     <p><%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %></p>
 
     </div>
-    <div class="review-form">
-      <h3>Let us know what you think!</h3>
-      <%= simple_form_for [@cocktail, @review] do |f| %>
-      <%= f.input :rating, collection: 0..5 %>
-      <%= f.input :content %>
-      <%= f.submit value='Add comment', class: "btn btn-flat"%>
-    <% end %>
-    </div>
+
   </div>
 </div>
-<div class="list-group mt-4">
-  <% @cocktail.reviews.each do |review| %>
-    <li class="list-group-item">
-      <small>
-        <% count = 0 %>
-        <% 5.times do %>
-          <% if review.rating > count %>
-            <i class="fas fa-star"></i>
-          <% else %>
-            <i class="far fa-star"></i>
+<div class="reviews">
+  <div class="list-group mt-4" style ="flex-grow: 1">
+    <% @cocktail.reviews.each do |review| %>
+      <li class="list-group-item">
+        <small>
+          <% count = 0 %>
+          <% 5.times do %>
+            <% if review.rating > count %>
+              <i class="fas fa-star"></i>
+            <% else %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <% count += 1 %>
           <% end %>
-          <% count += 1 %>
-        <% end %>
-      </small>
-      <p><%= review.content %></p>
-    </li>
+        </small>
+        <p><%= review.content %></p>
+      </li>
+    <% end %>
+  </div>
+  <div class="review-form">
+    <h3>Let us know what you think!</h3>
+    <%= simple_form_for [@cocktail, @review] do |f| %>
+    <%= f.input :rating, collection: 0..5 %>
+    <%= f.input :content %>
+    <%= f.submit value='Add comment', class: "btn btn-flat"%>
   <% end %>
+  </div>
 </div>
 
 
 
-
+<img src="httpsrjghrtuhr/<%=cjfhjeiufh%>">
 
 
 
