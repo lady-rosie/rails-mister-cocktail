@@ -23,9 +23,18 @@
         </li>
     <% end %>
   </ul>
-    <p><%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %></p>
+  <!-- <p><%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %></p> -->
 
-    </div>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-green" data-toggle="modal" data-target="#exampleModal">
+    Add ingredient
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <%= render 'doses/modal' %>
+  </div>
+
+  </div>
 
   </div>
 </div>
