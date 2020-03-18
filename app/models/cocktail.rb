@@ -3,6 +3,7 @@ class Cocktail < ApplicationRecord
   has_many :ingredients, through: :doses
   has_many :reviews, dependent: :destroy
   has_one_attached :photo, dependent: :destroy
+
   validates :name, presence: true, uniqueness: true, allow_blank: false
   validates :photo, presence: true
 end
