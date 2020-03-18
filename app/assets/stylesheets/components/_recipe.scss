@@ -62,8 +62,23 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
+  .recipe-card{
+  display: flex;
+  align-items: center;
+   flex-direction: column;
+  font-weight: bold;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100%;
+  }
+  .recipe-img{
+  width: 100%;
+  }
+
   .reviews {
    flex-direction: column;
+    padding: 0px;
+    width: 100%;
   }
   .review-form{
     margin: 32px;
@@ -72,8 +87,22 @@
 
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) {
+  .recipe-card{
+  display: flex;
+  align-items: center;
+   flex-direction: column;
+  font-weight: bold;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100%;
+  }
+  .recipe-img{
+  width: 100%;
+  }
   .reviews {
     flex-direction: column;
+    padding: 0px;
+    width: 100%;
   }
   .review-form{
     margin: 32px;

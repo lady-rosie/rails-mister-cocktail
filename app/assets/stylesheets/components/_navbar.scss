@@ -10,3 +10,24 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+.nav-item{
+  text-align: right;
+}
+.navbar-toggler{
+  border: 0px;
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    border: 0px;
+  }
+}
+
+.navbar-light .navbar-toggler-icon{
+  background-image: url('menu.svg');
+}
+
+.nav-link{
+  padding-top: 0px;
+  padding-bottom: 8px;
+}

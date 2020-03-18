@@ -31,21 +31,25 @@
 </div>
 <div class="reviews">
   <div class="list-group mt-4" style ="flex-grow: 1">
-    <% @cocktail.reviews.each do |review| %>
-      <li class="list-group-item">
-        <small>
-          <% count = 0 %>
-          <% 5.times do %>
-            <% if review.rating > count %>
-              <i class="fas fa-star"></i>
-            <% else %>
-              <i class="far fa-star"></i>
+    <% if @cocktail.reviews.empty? %>
+    <p>No reviews yet, be the first to add one !</p>
+    <% else %>
+      <% @cocktail.reviews.each do |review| %>
+        <li class="list-group-item">
+          <small>
+            <% count = 0 %>
+            <% 5.times do %>
+              <% if review.rating > count %>
+                <i class="fas fa-star"></i>
+              <% else %>
+                <i class="far fa-star"></i>
+              <% end %>
+              <% count += 1 %>
             <% end %>
-            <% count += 1 %>
-          <% end %>
-        </small>
-        <p><%= review.content %></p>
-      </li>
+          </small>
+          <p><%= review.content %></p>
+        </li>
+      <% end %>
     <% end %>
   </div>
   <div class="review-form">

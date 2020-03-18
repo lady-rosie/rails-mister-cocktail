@@ -2,8 +2,8 @@
     <%= link_to cocktail_path(@cocktail), class: "btn btn-ghost"  do%>
     <p><i class="fas fa-chevron-left"></i> Back</p>
   <% end %>
-  <h1>Add an ingredient</h1>
-  <div class="row form col-md-6">
+  <h1 id="head-new">Add an ingredient</h1>
+  <div class="form">
     <div class="col-md-11">
   <%= render 'form' %>
   </div>
