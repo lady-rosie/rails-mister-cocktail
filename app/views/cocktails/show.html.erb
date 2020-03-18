@@ -7,35 +7,36 @@
     <div class="recipe-img">
       <%= cl_image_tag @cocktail.photo.key, crop: :fill %>
     </div>
+    <div id="delete-btn">
+      <%= link_to "Delete", cocktail_path(@cocktail),
+      method: :delete,
+      data: { confirm: "Delete #{@cocktail.name}?" }, class: "btn-green" %>
+    </div>
   <div class="recipe">
     <div class="recipe-info">
-    <h1><%= @cocktail.name.capitalize%></h1>
-    <h4>Recipe</h4>
-    <ul>
-        <% @cocktail.doses.each do |dose|%>
-          <li>
-          <%= dose.description %> <%= dose.ingredient.name %>
-          <%= link_to dose_path(dose.id),
-          method: :delete,
-          data: { confirm: "Delete #{dose.ingredient.name}?" } do %>
-            <i class="fas fa-times"></i>
+      <h1><%= @cocktail.name.capitalize%></h1>
+      <h4>Recipe</h4>
+      <ul>
+          <% @cocktail.doses.each do |dose|%>
+            <li>
+            <%= dose.description %> <%= dose.ingredient.name %>
+            <%= link_to dose_path(dose.id),
+            method: :delete,
+            data: { confirm: "Delete #{dose.ingredient.name}?" } do %>
+              <i class="fas fa-times"></i>
+            <% end %>
+            </li>
           <% end %>
-        </li>
-    <% end %>
-  </ul>
-  <!-- <p><%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %></p> -->
-
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-green" data-toggle="modal" data-target="#exampleModal">
-    Add ingredient
-  </button>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <%= render 'doses/modal' %>
-  </div>
-
-  </div>
-
+      </ul>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-green" data-toggle="modal" data-target="#exampleModal">
+        Add ingredient
+      </button>
+      <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <%= render 'doses/modal' %>
+        </div>
+    </div>
   </div>
 </div>
 <div class="reviews">

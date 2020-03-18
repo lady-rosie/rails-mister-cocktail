@@ -6,6 +6,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 70%;
   margin: 0 auto;
+  position: relative;
 
   ul{
     list-style: none;
@@ -19,6 +20,11 @@
       margin: 4px;
     }
   }
+}
+#delete-btn{
+  position: absolute;
+  top: 14px;
+  right: 14px;
 }
 
 .recipe-img{
@@ -36,12 +42,12 @@
   justify-content: space-between;
   align-items: baseline;
   flex-grow: 1;
-  padding: 40px;
-
+  padding: 0 40px;
   a{
     color: $green;
   }
 }
+
 
 .reviews{
   display:flex;
@@ -95,6 +101,18 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 100%;
+  }
+  #delete-btn{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  a{
+    background-color:white;
+    padding: 8px;
+  }
+}
+  .recipe{
+    padding: 20px 20px;
   }
   .recipe-img{
   width: 100%;
